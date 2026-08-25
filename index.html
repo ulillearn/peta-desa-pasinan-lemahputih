@@ -50,6 +50,16 @@
             border-radius: 4px;
             padding: 6px 9px;
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00897b !important;
+            color: #ffffff !important;
+        }
+        .search-layer button:hover,
+        .search-layer button:focus {
+            background-color: #00695c !important;
+            color: #ffffff !important;
         }
         .search-layer .search-layer-input-search {
             position: absolute;
@@ -60,9 +70,47 @@
             border: 1px solid #ccc;
             font-family: inherit;
             font-size: 0.875rem;
+            display: none;
+        }
+        .search-layer.search-active .search-layer-input-search {
+            display: block;
         }
         .sey-container {
             z-index: 2000;
+        }
+
+        .geolocate-button {
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 6px 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2b7fff !important;
+            color: #ffffff !important;
+        }
+        .geolocate-button:hover,
+        .geolocate-button:focus {
+            background-color: #1a63e0 !important;
+            color: #ffffff !important;
+        }
+
+        .measure-button {
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 6px 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f57c00 !important;
+            color: #ffffff !important;
+        }
+        .measure-button:hover,
+        .measure-button:focus {
+            background-color: #d96d00 !important;
+            color: #ffffff !important;
         }
         </style>
         <title></title>

@@ -962,7 +962,25 @@ let measuring = false;
     var searchControl = new ol.control.Control({ element: searchElement });
     map.addControl(searchControl);
 
-    searchButton.addEventListener('click', function () { searchInput.focus(); });
+    searchButton.addEventListener('click', function () {
+        searchElement.classList.toggle('search-active');
+        if (searchElement.classList.contains('search-active')) {
+            searchInput.focus();
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!searchElement.contains(e.target)) {
+            searchElement.classList.remove('search-active');
+        }
+    });
+
+    searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+            searchElement.classList.remove('search-active');
+            searchInput.blur();
+        }
+    });
 
     var stopMapPropagation = function (e) { e.stopPropagation(); };
     searchElement.addEventListener('pointerdown', stopMapPropagation);
